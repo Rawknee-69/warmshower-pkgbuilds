@@ -6,14 +6,13 @@ pkgname=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirro
 pkgver=27
 pkgrel=1
 pkgdesc="WarmShower OS repository mirrorlist"
-url='https://github.com/YOUR_ORG/warmshower-pkgbuilds'  # TODO: update to your fork URL
+url='https://github.com/Rawknee-69/warmshower-pkgbuilds'
 arch=('any')
 license=(GPL-3.0-or-later)
 groups=(warmshower)
 conflicts=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
 replaces=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
 source=(warmshower-mirrorlist)
-# TODO: recalculate sha512sums after any mirrorlist changes
 sha512sums=('SKIP')
 
 package_warmshower-mirrorlist() {

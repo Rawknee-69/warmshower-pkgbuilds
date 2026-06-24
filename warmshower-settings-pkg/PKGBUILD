@@ -10,11 +10,9 @@ arch=('any')
 license=(GPL-1.0-only)
 makedepends=('coreutils' 'git')
 pkgdesc='WarmShower OS - Settings'
-url="https://github.com/YOUR_ORG/$_gitname"
-# TODO: update source= URL to your fork's remote once Step 1 GitHub rename is done
+url="https://github.com/Rawknee-69/$_gitname"
 source=("git+$url.git#tag=$pkgver")
 install="$pkgname.install"
-# TODO: update sha256sums after first build from your fork
 sha256sums=('SKIP')
 # Upstream maintainer keys — replace or extend with your own GPG key once
 # you sign releases from the warmshower fork.

@@ -22,7 +22,7 @@ In order to use these PKGBUILD scripts, you will need to have the following tool
 
 To build and install a package using one of the PKGBUILD scripts in this repository, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/YOUR_ORG/warmshower-pkgbuilds.git`
+1. Clone this repository: `git clone https://github.com/Rawknee-69/warmshower-pkgbuilds.git`
 2. Navigate to the directory of the PKGBUILD script you want to use: `cd warmshower-pkgbuilds/<package>`
 3. Build the package: `makepkg -si`
 4. Install the package: `sudo pacman -U <packagename>.pkg.tar.zst`

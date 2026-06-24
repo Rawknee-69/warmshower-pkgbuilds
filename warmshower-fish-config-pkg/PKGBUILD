@@ -6,7 +6,7 @@ pkgver=15
 pkgrel=1
 pkgdesc="Fish configuration of WarmShower OS"
 arch=('any')
-url="https://github.com/YOUR_ORG/$pkgname"
+url="https://github.com/Rawknee-69/$pkgname"
 license=('MIT')
 depends=(
   bat
@@ -27,7 +27,6 @@ makedepends=(
 )
 conflicts=('warmshower-fish-config' 'kwin-scripts-window-colors')
 replaces=('warmshower-fish-config')
-# TODO: update source= tarball URL and sha256sums to your fork once Step 1 rename is done
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
         "$pkgname.install")
 sha256sums=('SKIP'

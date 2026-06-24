@@ -1,7 +1,7 @@
 jobs:
   check-versions:
     env:
-      GITHUB_REPO: "YOUR_ORG/warmshower-pkgbuilds"
+      GITHUB_REPO: "Rawknee-69/warmshower-pkgbuilds"
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     runs-on: ubuntu-latest
