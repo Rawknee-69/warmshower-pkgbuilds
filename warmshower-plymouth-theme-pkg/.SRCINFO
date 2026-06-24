@@ -1,0 +1,15 @@
+pkgbase = warmshower-plymouth-theme
+	pkgdesc = WarmShower OS Plymouth theme
+	pkgver = 1
+	pkgrel = 1
+	url = https://github.com/CachyOS/cachyos-plymouth-theme
+	arch = any
+	groups = warmshower
+	license = GPL
+	makedepends = git
+	depends = plymouth
+	optdepends = plymouth-kcm: for KDE settings integration
+	source = cachyos-plymouth-theme::git+https://github.com/CachyOS/cachyos-plymouth-theme.git
+	sha256sums = SKIP
+
+pkgname = warmshower-plymouth-theme

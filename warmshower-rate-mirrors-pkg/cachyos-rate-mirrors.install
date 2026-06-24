@@ -1,0 +1,13 @@
+post_install() {
+    systemctl daemon-reload
+    systemctl enable warmshower-rate-mirrors.timer
+}
+
+post_upgrade() {
+    systemctl daemon-reload
+    systemctl enable warmshower-rate-mirrors.timer
+}
+
+pre_remove() {
+    systemctl disable warmshower-rate-mirrors.timer
+}

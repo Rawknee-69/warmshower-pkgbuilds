@@ -1,0 +1,34 @@
+# Maintainer: Peter Jung ptr1337 <admin@ptr1337.dev>
+# Maintainer: Vladislav Nepogodin (upstream)
+
+pkgbase=warmshower-mirrorlist
+pkgname=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
+pkgver=27
+pkgrel=1
+pkgdesc="WarmShower OS repository mirrorlist"
+url='https://github.com/YOUR_ORG/warmshower-pkgbuilds'  # TODO: update to your fork URL
+arch=('any')
+license=(GPL-3.0-or-later)
+groups=(warmshower)
+conflicts=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
+replaces=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
+source=(warmshower-mirrorlist)
+# TODO: recalculate sha512sums after any mirrorlist changes
+sha512sums=('SKIP')
+
+package_warmshower-mirrorlist() {
+ backup=("etc/pacman.d/$pkgname")  # to keep possibly ranked mirrorlist
+ install -Dm644 "$srcdir/$pkgbase" "$pkgdir/etc/pacman.d/$pkgname"
+}
+
+package_warmshower-v3-mirrorlist() {
+ backup=("etc/pacman.d/$pkgname")  # to keep possibly ranked mirrorlist
+ install -Dm644 "$srcdir/$pkgbase" "$pkgdir/etc/pacman.d/$pkgname"
+ sed -i 's|/$arch/|/$arch_v3/|g' "$pkgdir/etc/pacman.d/$pkgname"
+}
+
+package_warmshower-v4-mirrorlist() {
+ backup=("etc/pacman.d/$pkgname")  # to keep possibly ranked mirrorlist
+ install -Dm644 "$srcdir/$pkgbase" "$pkgdir/etc/pacman.d/$pkgname"
+ sed -i 's|/$arch/|/$arch_v4/|g' "$pkgdir/etc/pacman.d/$pkgname"
+}

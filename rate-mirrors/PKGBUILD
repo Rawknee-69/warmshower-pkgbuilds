@@ -1,4 +1,4 @@
-# Maintainer: Vladislav Nepogodin (vnepogodin) <vnepogodin@cachyos.org>
+# Maintainer: Vladislav Nepogodin (upstream)
 # Contributor: Nikita Almakov <nikita.almakov@gmail.com>
 
 pkgname=rate-mirrors
@@ -24,10 +24,10 @@ sha256sums=('18b0640e2fcff7d2b50ef3d39f91b1ec458a7324e85b0dd5fce0e9d85f025494'
 prepare() {
   cd "$pkgname"
 
-  # archlinux: use cachyos proxy mirrorlist
+  # archlinux: use warmshower proxy mirrorlist
   patch -Np1 -i ../d772bcada9290c3512410bbf6bb337d014a96c42.patch
 
-  # cachyos: add proxy mirrorlist as primary
+  # warmshower: add proxy mirrorlist as primary
   patch -Np1 -i ../c7f7f0c9d35bd3b490cd2bb95609707038829b25.patch
 
   # archlinux: fall back to upstream mirror status on proxy failure

@@ -1,4 +1,4 @@
-# Maintainer: Vladislav Nepogodin (vnepogodin) <vnepogodin@cachyos.org>
+# Maintainer: Vladislav Nepogodin (upstream)
 
 pkgname=pkg-manage-util
 pkgver=0.1.0
@@ -12,7 +12,7 @@ makedepends=('git' 'cargo' 'lld' 'clang' 'llvm')
 source=("$pkgname::git+$url.git#tag=v$pkgver?signed")
 sha256sums=('2757d91d92c9c5700b759dfe62850a83de4145a3d1bf8714fd0d8526b45b3422')
 validpgpkeys=(
-  'B1B70BB1CD56047DEF31DE2EB62C3D10C54D5DA9'  # Vladislav Nepogodin <nepogodin.vlad@gmail.com>
+  'B1B70BB1CD56047DEF31DE2EB62C3D10C54D5DA9'  # Vladislav Nepogodin <upstream-maintainer>
 )
 
 prepare() {

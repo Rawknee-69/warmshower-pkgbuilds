@@ -6,7 +6,7 @@ pkgver=${_srctag//-/.}
 pkgrel=1
 arch=('any')
 license=('GPL-3.0-later')
-pkgdesc='CachyOS - Deckify Steam Deck Fan Control'
+pkgdesc='WarmShower OS - Deckify Steam Deck Fan Control'
 source=("git+https://github.com/evlaV/jupiter-fan-control.git#tag=$_srctag")
 #install="$pkgname.install"
 options=(!strip !debug)

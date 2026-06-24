@@ -1,10 +1,10 @@
 pkgbase = chwd
-	pkgdesc = CachyOS Hardware Detection Tool
+	pkgdesc = WarmShower OS Hardware Detection Tool
 	pkgver = 1.22.0
 	pkgrel = 1
 	url = https://github.com/cachyos/chwd
 	arch = x86_64
-	groups = cachyos
+	groups = warmshower
 	license = GPL-3.0-or-later
 	makedepends = git
 	makedepends = cargo

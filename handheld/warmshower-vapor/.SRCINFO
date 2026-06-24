@@ -1,0 +1,14 @@
+pkgbase = warmshower-vapor
+	pkgdesc = SteamOS Vapor theme for WarmShower OS Handheld
+	pkgver = 1
+	pkgrel = 1
+	url = https://github.com/CachyOS/warmshower-vapor
+	arch = any
+	license = GPL2
+	makedepends = git
+	makedepends = openssh
+	depends = kdialog
+	source = git+https://github.com/CachyOS/warmshower-vapor.git
+	sha512sums = SKIP
+
+pkgname = warmshower-vapor

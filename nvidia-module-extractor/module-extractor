@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (C) 2025 CachyOS
+# Copyright (C) 2025 WarmShower OS (forked from CachyOS)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ function extract_package_modules() {
     local tmp="$(mktemp --suffix="-extractor" -d)"
     trap 'rm -rf -- "$tmp"' RETURN
 
-    # Import cachyos repository key
+    # Import warmshower repository key
     local gpg_dir="$tmp/gnupg"
     local pacman_conf="$tmp/pacman.conf"
     mkdir -p "$gpg_dir"
@@ -47,7 +47,8 @@ function extract_package_modules() {
 DisableDownloadTimeout
 Architecture = auto
 
-[cachyos]
+[warmshower]
+# NOTE: temporarily using upstream mirror until [warmshower] repo is live (Step 10)
 Server = https://mirror.cachyos.org/repo/$arch/$repo
 EOF
 
@@ -70,7 +71,7 @@ EOF
         pacman-key "${pacman_opts[@]}" --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
         pacman-key "${pacman_opts[@]}" --lsign-key F3B607488DB35A47
     ); then
-        error "Failed to import GPG key for cachyos repository"
+        error "Failed to import GPG key for WarmShower OS repository"
         return 1
     fi
 

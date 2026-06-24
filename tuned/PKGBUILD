@@ -4,7 +4,7 @@
 # Contributor: Timothée Ravier <tim at siosm dot fr>
 # Contributor: Tom <reztho at archlinux dot org>
 
-pkgbase=tuned-cachy
+pkgbase=tuned-warmshower
 pkgname=("${pkgbase}" "${pkgbase}-ppd")
 pkgver=2.27.0
 pkgrel=2
@@ -24,13 +24,13 @@ prepare() {
   sed -i 's|/sbin/|/bin/|g' tuned.service tuned-gui.py tuned-gui.desktop tuned/ppd/tuned-ppd.service
 }
 
-package_tuned-cachy() {
+package_tuned-warmshower() {
   provides=('tuned')
   conflicts=('tuned')
   optdepends=(
     'virt-what: Virtual machine detection'
     'systemtap: Detailed system monitoring'
-    'tuned-cachy-ppd: power-profiles-daemon api translation'
+    'tuned-warmshower-ppd: power-profiles-daemon api translation'
     'wireless_tools: Wireless device power management'
     'x86_energy_perf_policy: Energy Performance Bias (EPB) support')
   backup=(
@@ -54,9 +54,9 @@ package_tuned-cachy() {
   python -O -m compileall -d /usr/lib "${pkgdir}/usr/lib"
 }
 
-package_tuned-cachy-ppd() {
+package_tuned-warmshower-ppd() {
   pkgdesc='Daemon that allows applications to easily transition to TuneD from power-profiles-daemon (PPD)'
-  depends=('tuned-cachy' 'python-pyinotify')
+  depends=('tuned-warmshower' 'python-pyinotify')
   provides=('tuned-ppd' 'power-profiles-daemon')
   conflicts=('tuned-ppd' 'power-profiles-daemon')
   backup=('etc/tuned/ppd.conf')

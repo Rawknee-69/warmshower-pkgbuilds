@@ -59,8 +59,8 @@ prepare() {
 #    patch -Np1 -i "${srcdir}/0003-fix-dp-add-Bigscreen-Beyond-VR-headset-to-WAR-databa.patch" -d "${srcdir}/${_pkg_open}/"
 
     # Attempt to make builds reproducible
-    sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo cachyos/" "${srcdir}/${_pkg_open}/utils.mk"
-    sed -i "s/^WHOAMI.*/WHOAMI = echo cachyos-builder/" "${srcdir}/${_pkg_open}/utils.mk"
+    sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo warmshower/" "${srcdir}/${_pkg_open}/utils.mk"
+    sed -i "s/^WHOAMI.*/WHOAMI = echo warmshower-builder/" "${srcdir}/${_pkg_open}/utils.mk"
     sed -i "s/^DATE.*/DATE = date -r version.mk/" "${srcdir}/${_pkg_open}/utils.mk"
 
     shopt -s globstar

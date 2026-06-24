@@ -1,0 +1,82 @@
+######################################################
+####                                              ####
+####      WarmShower OS Repository Mirrorlist     ####
+####                                              ####
+######################################################
+# NOTE: All Server= lines below are inherited upstream mirrors (replace after Step 10).
+# These are inherited temporarily so pacman can resolve packages during bootstrap.
+# Replace with your own [warmshower] repo mirrors once Step 10 is complete.
+#
+## CDN77 (World Wide Datacenters)
+## tier=1 code=GLOBAL
+Server = https://cdn77.cachyos.org/repo/$arch/$repo
+## USA Mirror
+## tier=2 code=US
+Server = https://us.cachyos.org/repo/$arch/$repo
+## France Mirror
+## tier=1 code=FR
+Server = https://mirror.lesviallon.fr/cachy/repo/$arch/$repo
+## Norway/Netherlands/Canada Mirror
+## tier=1 code=NO
+Server = https://no.mirror.cx/cachyos/repo/$arch/$repo
+## tier=1 code=NL
+Server = https://nl.mirror.cx/cachyos/repo/$arch/$repo
+## tier=1 code=CA
+Server = https://ca.mirror.cx/cachyos/repo/$arch/$repo
+## Sweden Mirror
+## tier=1 code=SE
+Server = https://mirror.zyner.org/mirror/cachyos/repo/$arch/$repo
+## Austria Mirror
+## tier=1 code=AT
+Server = https://at.cachyos.org/repo/$arch/$repo
+## Germany Mirror
+## tier=1 code=DE
+Server = https://mirror.mergedcloud.de/cachyos/repo/$arch/$repo
+## USA Mirror
+## tier=1 code=US
+Server = https://us-mnz.soulharsh007.dev/cachyos/repo/$arch/$repo
+## USA Mirrors (Lansing 2600)
+## tier=1 code=US
+Server = https://mirrors.lansing2600.org/cachyos/repo/$arch/$repo
+## tier=1 code=GLOBAL
+Server = https://cdn.lansing2600.org/cachyos/repo/$arch/$repo
+## China Mirrors
+## tier=2 code=CN
+Server = https://mirror.nju.edu.cn/cachyos/repo/$arch/$repo
+## tier=2 code=CN
+Server = https://mirrors.ustc.edu.cn/cachyos/repo/$arch/$repo
+## Italy Mirrors
+## tier=1 code=IT
+Server = https://cachyos.next-works.it/repo/$arch/$repo
+## tier=2 code=IT
+Server = https://cachyos-mirror.m1k.cloud/repo/$arch/$repo
+## Finland Mirror
+## tier=2 code=FI
+Server = https://cachyos.doridian.net/repo/$arch/$repo
+## Switzerland Mirror
+## tier=2 code=CH
+Server = https://mirror.hb9hil.org/cachyos/repo/$arch/$repo
+## Russia Mirrors
+## tier=2 code=RU
+Server = https://archlinux.gay/cachy/repo/$arch/$repo
+## tier=2 code=RU
+Server = https://mirror.jura12.ru/repo/$arch/$repo
+## tier=2 code=RU
+Server = https://mirror.cachy-arch.ru/cachyos/repo/$arch/$repo
+## tier=2 code=RU
+Server = https://wan.metrosg.ru/cachyos/repo/$arch/$repo
+## Republic of Korea Mirrors
+## tier=2 code=KR
+Server = https://mirror.keiminem.com/cachyos/repo/$arch/$repo
+## tier=2 code=KR
+Server = https://mirror2.keiminem.com/cachyos/repo/$arch/$repo
+## tier=2 code=GLOBAL
+Server = https://mirror.krfoss.org/cachyos/repo/$arch/$repo
+## tier=2 code=GLOBAL
+Server = https://mirror5.krfoss.org/cachyos/repo/$arch/$repo
+## USA mirror (hjk321)
+## tier=1 code=US
+Server = https://mirror.hjk.gg/cachyos/repo/$arch/$repo
+## Vietnam Mirror
+## tier=2 code=VN
+Server = https://mirrors.nguyenhoang.cloud/cachyos/repo/$arch/$repo

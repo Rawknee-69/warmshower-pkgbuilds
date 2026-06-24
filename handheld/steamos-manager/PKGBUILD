@@ -1,7 +1,7 @@
 ## Valve
 # Maintainer: Vicki Pfau <vi@endrift.com>
 # Maintainer: Jeremy Whiting <jeremy.whiting@collabora.com>
-## CachyOS
+## WarmShower OS
 # Maintainer: Eric Naim <dnaim@cachyos.org>
 
 pkgname=steamos-manager

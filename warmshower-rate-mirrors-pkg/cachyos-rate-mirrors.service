@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh arch / WarmShower OS mirror lists
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=oneshot
+StandardOutput=null
+StandardError=journal
+ExecStart=/usr/bin/warmshower-rate-mirrors

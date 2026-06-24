@@ -18,7 +18,7 @@ depends=(
 )
 optdepends=('grub-steamos')
 makedepends=('rsync' 'git' 'xorg-xcursorgen')
-pkgdesc='CachyOS - Deckify Steam Deck HW Support'
+pkgdesc='WarmShower OS - Deckify Steam Deck HW Support'
 source=("git+https://github.com/evlaV/jupiter-hw-support.git#tag=jupiter-${pkgver}"
         "steamos-btrfs-automount.patch"
         "cachyos-automount.patch"

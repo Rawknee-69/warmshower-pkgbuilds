@@ -1,0 +1,25 @@
+# Maintainer: Vladislav Nepogodin <upstream-maintainer>
+
+pkgname=warmshower-wallpapers
+pkgdesc='Wallpapers for WarmShower OS'
+pkgver=r10.fb98756
+pkgrel=1
+arch=('any')
+url="https://github.com/YOUR_ORG/$pkgname"
+license=(GPL-1.0-only)
+makedepends=('git')
+conflicts=('warmshower-wallpapers')
+replaces=('warmshower-wallpapers')
+# TODO: update source= URL to your fork once Step 1 GitHub rename is done
+source=("git+$url.git")
+sha512sums=('SKIP')
+
+pkgver() {
+   cd $srcdir/$pkgname
+   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    install -d $pkgdir/usr
+    cp -rf $srcdir/$pkgname/usr $pkgdir
+}

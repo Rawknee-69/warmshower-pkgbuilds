@@ -14,7 +14,7 @@ body:
     attributes:
       label: Package name
       description: The name of the package to update (as it appears in this repository).
-      placeholder: e.g. cachyos-hello
+      placeholder: e.g. WarmShower OS-hello
     validations:
       required: true
 

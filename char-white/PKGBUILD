@@ -8,7 +8,7 @@ license=(GPL-1.0-only)
 makedepends=('git')
 source=("git+https://github.com/CachyOS/char-white.git")
 sha256sums=('SKIP')
-groups=('cachyos')
+groups=('warmshower')
 
 pkgver() {
 	cd "$srcdir/$pkgname"

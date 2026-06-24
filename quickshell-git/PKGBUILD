@@ -52,7 +52,7 @@ build() {
   cd "$_pkgname"
   local cmake_options=(
     -D CMAKE_BUILD_TYPE=RelWithDebInfo
-    -D DISTRIBUTOR='CachyOS Linux'
+    -D DISTRIBUTOR='WarmShower OS'
     -D DISTRIBUTOR_DEBUGINFO_AVAILABLE=Yes
     -D CRASH_REPORTER=Off
     -D CMAKE_INSTALL_PREFIX=/usr

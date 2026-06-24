@@ -1,7 +1,7 @@
 pkgname=systemd-boot-manager
 pkgver=20
 pkgrel=1
-pkgdesc='A simple tool to maintain systemd-boot & systemd-boot entries for CachyOS'
+pkgdesc='A simple tool to maintain systemd-boot & systemd-boot entries for WarmShower OS'
 arch=(any)
 url="https://github.com/CachyOS/CachyOS-PKGBUILDS/tree/master/$pkgname"
 license=(GPL-2.0-or-later)

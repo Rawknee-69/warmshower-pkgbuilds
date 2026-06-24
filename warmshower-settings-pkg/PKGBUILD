@@ -1,0 +1,50 @@
+﻿# Maintainer: Peter Jung <admin@ptr1337.dev>
+
+_gitname=warmshower-settings
+pkgname=warmshower-settings
+pkgver=1.3.5
+pkgrel=1
+epoch=1
+groups=(warmshower)
+arch=('any')
+license=(GPL-1.0-only)
+makedepends=('coreutils' 'git')
+pkgdesc='WarmShower OS - Settings'
+url="https://github.com/YOUR_ORG/$_gitname"
+# TODO: update source= URL to your fork's remote once Step 1 GitHub rename is done
+source=("git+$url.git#tag=$pkgver")
+install="$pkgname.install"
+# TODO: update sha256sums after first build from your fork
+sha256sums=('SKIP')
+# Upstream maintainer keys — replace or extend with your own GPG key once
+# you sign releases from the warmshower fork.
+validpgpkeys=(
+  E8B9AA39F054E30E8290D492C3C4820857F654FE  # Peter Jung <admin@ptr1337.dev>
+  B1B70BB1CD56047DEF31DE2EB62C3D10C54D5DA9  # Vladislav Nepogodin <upstream-maintainer>
+)
+depends=(
+  zram-generator
+  ananicy-cpp
+  warmshower-ananicy-rules
+  inxi
+  "systemd>=256"
+  iw # for setting proper regulatory
+  wireless-regdb
+)
+# NOTE: warmshower-ananicy-rules is an upstream dependency package name.
+# Fork and rename it (warmshower-ananicy-rules) in a later step if desired.
+optdepends=('libluv: for topmem'
+            'lua-luv: for topmem'
+            'power-profiles-daemon: For game-performance')
+provides=('ntsync-common')
+conflicts=('warmshower-settings')
+replaces=('warmshower-settings')
+prepare() {
+  cd $_gitname
+}
+package() {
+  install -d "$pkgdir/etc"
+  cp -rf "${srcdir}/${_gitname}/etc" "$pkgdir"
+  install -d "$pkgdir/usr"
+  cp -rf "${srcdir}/${_gitname}/usr" "$pkgdir"
+}

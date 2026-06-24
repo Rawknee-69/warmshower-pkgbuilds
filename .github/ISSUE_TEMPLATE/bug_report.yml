@@ -14,7 +14,7 @@ body:
     attributes:
       label: Package name
       description: The name of the affected package (as it appears in this repository).
-      placeholder: e.g. cachyos-hello
+      placeholder: e.g. WarmShower OS-hello
     validations:
       required: true
 
@@ -69,12 +69,12 @@ body:
   - type: textarea
     id: bugreport
     attributes:
-      label: CachyOS bug report
+      label: WarmShower OS bug report
       description: |
-        Run `sudo cachyos-bugreport.sh` and paste the URL to the uploaded log here.
+        Run `sudo WarmShower OS-bugreport.sh` and paste the URL to the uploaded log here.
         The script collects system information and uploads it automatically — only the link is needed.
         If you cannot run this script, please provide relevant system information (e.g. OS, kernel, hardware) instead.
-      placeholder: https://paste.cachyos.org/...
+      placeholder: https://paste.WarmShower OS.org/...
     validations:
       required: false
 

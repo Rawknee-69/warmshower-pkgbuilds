@@ -1,0 +1,3 @@
+[warmshower-hooks]
+source = "git"
+git = "https://github.com/CachyOS/warmshower-hooks.git"

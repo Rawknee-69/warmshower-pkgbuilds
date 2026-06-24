@@ -1,0 +1,17 @@
+# Maintainer Peter Jung <admin@ptr1337.dev>
+
+pkgname=warmshower-vapor
+pkgver=1
+pkgrel=1
+arch=('any')
+url="https://github.com/CachyOS/warmshower-vapor"
+pkgdesc="SteamOS Vapor theme for WarmShower OS Handheld"
+license=(GPL-2.0-or-later)
+depends=('kdialog')
+makedepends=('git' 'openssh')
+source=("git+https://github.com/CachyOS/warmshower-vapor.git")
+sha512sums=(SKIP)
+
+package() {
+  cp -R "$srcdir"/warmshower-vapor/* "$pkgdir"
+}

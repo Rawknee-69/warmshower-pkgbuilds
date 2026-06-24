@@ -1,0 +1,17 @@
+pkgbase = warmshower-ananicy-rules
+	pkgdesc = WarmShower OS - ananicy-rules
+	pkgver = 1.1.42
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/CachyOS/ananicy-rules
+	arch = any
+	groups = warmshower
+	license = GPL-3.0-or-later
+	makedepends = git
+	provides = ananicy-rules-git
+	conflicts = ananicy-rules-git
+	replaces = ananicy-rules-git
+	source = ananicy-rules::git+https://github.com/CachyOS/ananicy-rules.git#tag=1.1.42
+	sha256sums = 8505f8793802bde3ff875491513845ff5a170ea9a2d38db45c79a3b5c2fc1040
+
+pkgname = warmshower-ananicy-rules

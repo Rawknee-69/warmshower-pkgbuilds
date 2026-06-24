@@ -1,9 +1,9 @@
 # vim: set ts=2 sw=2 et:
 ### Arch Linux PKGBUILD maintainer:
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
-### CachyOS PKGBUILD maintainers:
-# Maintainer: Vladislav Nepogodin (vnepogodin) <nepogodin.vlad@gmail.com>
-# Maintainer: Piotr Gorski <piotrgorski@cachyos.org>
+### WarmShower OS PKGBUILD Maintainers:
+# Maintainer: Vladislav Nepogodin (vnepogodin) <upstream-maintainer>
+# Maintainer: Piotr Gorski <warmshower-team>
 # Maintainer: Peter Jung ptr1337 <admin@ptr1337.dev>
 # Maintainer: SoulHarsh007 <admin@soulharsh007.dev>
 
@@ -16,7 +16,7 @@ _sqlitever=$(curl -s 'https://archlinux.org/packages/search/json/?name=sqlite' |
     else { printf "00" }
 }')
 pkgrel=4
-pkgdesc="A library-based package manager with dependency support. CachyOS fork."
+pkgdesc="A library-based package manager with dependency support. WarmShower OS fork."
 arch=('x86_64' 'aarch64')
 url="https://www.archlinux.org/pacman/"
 license=('GPL-2.0-or-later')
@@ -92,7 +92,7 @@ sha256sums=('37bcdca914a74c3ce72647ad3ef19baaa648694cfa09d99a628f8b1d2ae11c3a'
             '5865513b59a2b7937f581f66de3163a78b55d6d631489b7bfe6e3ad2953486c6')
 sha256sums_aarch64=('58a6d7b93519d96a995399c85da5ad6b554f6f218908e2fbb2497956725d5e94')
 validpgpkeys=(
-  'B1B70BB1CD56047DEF31DE2EB62C3D10C54D5DA9'  # Vladislav Nepogodin <nepogodin.vlad@gmail.com>
+  'B1B70BB1CD56047DEF31DE2EB62C3D10C54D5DA9'  # Vladislav Nepogodin <upstream-maintainer>
 )
 
 #if $_staging; then

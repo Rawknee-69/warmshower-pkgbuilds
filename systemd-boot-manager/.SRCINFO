@@ -1,5 +1,5 @@
 pkgbase = systemd-boot-manager
-	pkgdesc = A simple tool to maintain systemd-boot & systemd-boot entries for CachyOS
+	pkgdesc = A simple tool to maintain systemd-boot & systemd-boot entries for WarmShower OS
 	pkgver = 20
 	pkgrel = 1
 	url = https://github.com/CachyOS/CachyOS-PKGBUILDS/tree/master/systemd-boot-manager

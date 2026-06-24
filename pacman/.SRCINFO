@@ -1,5 +1,5 @@
 pkgbase = pacman
-	pkgdesc = A library-based package manager with dependency support. CachyOS fork.
+	pkgdesc = A library-based package manager with dependency support. WarmShower OS fork.
 	pkgver = 7.1.0.r9.g54d9411
 	pkgrel = 4
 	url = https://www.archlinux.org/pacman/

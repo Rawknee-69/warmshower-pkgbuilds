@@ -1,0 +1,44 @@
+# Maintainer: Vladislav Nepogodin <upstream-maintainer>
+# Maintainer: ptr1337 <admin@ptr1337.dev>
+
+pkgname=warmshower-fish-config
+pkgver=15
+pkgrel=1
+pkgdesc="Fish configuration of WarmShower OS"
+arch=('any')
+url="https://github.com/YOUR_ORG/$pkgname"
+license=('MIT')
+depends=(
+  bat
+  expac
+  eza
+  fastfetch
+  fish
+  fish-autopair
+  fish-pure-prompt
+  fisher
+  fzf
+  pkgfile
+  tealdeer
+  ttf-fantasque-nerd
+)
+makedepends=(
+  git
+)
+conflicts=('warmshower-fish-config' 'kwin-scripts-window-colors')
+replaces=('warmshower-fish-config')
+# TODO: update source= tarball URL and sha256sums to your fork once Step 1 rename is done
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
+        "$pkgname.install")
+sha256sums=('SKIP'
+            'SKIP')
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  install -D -m644 conf.d/done.fish $pkgdir/usr/share/warmshower-fish-config/conf.d/done.fish
+  install -D -m644 warmshower-config.fish $pkgdir/usr/share/warmshower-fish-config/warmshower-config.fish
+  install -D -m644 config.fish $pkgdir/etc/skel/.config/fish/config.fish
+}
+
+# vim:set sw=2 sts=2 et:

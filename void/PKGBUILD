@@ -1,5 +1,5 @@
 # Maintainer: Darkest Medium <darkestmedium@gmail.com>
-# Maintainer: Vladislav Nepogodin (vnepogodin) <nepogodin.vlad@gmail.com>
+# Maintainer: Vladislav Nepogodin (vnepogodin) <upstream-maintainer>
 
 pkgname=void
 epoch=1 # Version scheme is different from prebuild source

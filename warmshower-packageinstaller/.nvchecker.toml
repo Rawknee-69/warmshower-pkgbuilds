@@ -1,0 +1,4 @@
+[warmshower-packageinstaller]
+source = "git"
+git = "https://github.com/cachyos/packageinstaller.git"
+prefix = "v"

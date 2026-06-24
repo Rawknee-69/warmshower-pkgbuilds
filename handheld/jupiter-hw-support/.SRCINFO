@@ -1,5 +1,5 @@
 pkgbase = jupiter-hw-support
-	pkgdesc = CachyOS - Deckify Steam Deck HW Support
+	pkgdesc = WarmShower OS - Deckify Steam Deck HW Support
 	pkgver = 20260413.1
 	pkgrel = 1
 	arch = any

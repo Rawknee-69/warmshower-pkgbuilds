@@ -58,120 +58,120 @@
 ├── bpftune-git
 │   ├── fix-makefile.patch
 │   └── PKGBUILD
-├── cachy-browser
-│   ├── cachy-browser.desktop
-│   ├── cachy-browser.install
+├── warmshower-browser
+│   ├── warmshower-browser.desktop
+│   ├── warmshower-browser.install
 │   ├── line-breakers-fix.patch
 │   ├── match.patch
 │   ├── PKGBUILD
 │   └── wasi-sysroot-path.patch
-├── cachy-chroot
+├── warmshower-chroot
 │   └── PKGBUILD
-├── cachyos-ananicy-rules
+├── warmshower-ananicy-rules
 │   └── PKGBUILD
-├── cachyos-benchmarker
+├── warmshower-benchmarker
 │   └── PKGBUILD
-├── cachyos-calamares
+├── warmshower-calamares
 │   └── PKGBUILD
-├── cachyos-cli-installer-new
+├── warmshower-cli-installer
 │   └── PKGBUILD
-├── cachyos-fish-config
-│   ├── cachyos-fish-config.install
+├── warmshower-fish-config
+│   ├── warmshower-fish-config.install
 │   └── PKGBUILD
-├── cachyos-gaming-applications
+├── warmshower-gaming-applications
 │   └── PKGBUILD
-├── cachyos-gaming-meta
+├── warmshower-gaming-meta
 │   └── PKGBUILD
-├── cachyos-gnome-settings
-│   ├── cachyos-gnome-settings.install
+├── warmshower-gnome-settings
+│   ├── warmshower-gnome-settings.install
 │   └── PKGBUILD
-├── cachyos-grub-theme
-│   ├── cachyos-grub-theme.install
+├── warmshower-grub-theme
+│   ├── warmshower-grub-theme.install
 │   └── PKGBUILD
-├── cachyos-hello
+├── warmshower-hello
 │   └── PKGBUILD
-├── cachyos-hello-git
+├── warmshower-hello-git
 │   └── PKGBUILD
-├── cachyos-hooks
+├── warmshower-hooks
 │   └── PKGBUILD
-├── cachyos-hyprland-settings
+├── warmshower-hyprland-settings
 │   └── PKGBUILD
-├── cachyos-i3wm-settings
-│   ├── cachyos-i3wm-settings.install
+├── warmshower-i3wm-settings
+│   ├── warmshower-i3wm-settings.install
 │   └── PKGBUILD
-├── cachyos-kde-settings
-│   ├── cachyos-kde-settings.install
+├── warmshower-kde-settings
+│   ├── warmshower-kde-settings.install
 │   └── PKGBUILD
-├── cachyos-kdump-tools
-│   ├── cachyos-kdump-tools.install
+├── warmshower-kdump-tools
+│   ├── warmshower-kdump-tools.install
 │   └── PKGBUILD
-├── cachyos-kernel-manager
+├── warmshower-kernel-manager
 │   ├── fix-installed-db.patch
 │   └── PKGBUILD
-├── cachyos-kernel-manager-git
+├── warmshower-kernel-manager-git
 │   ├── fix-installed-db.patch
 │   └── PKGBUILD
-├── cachyos-keyring
-│   ├── cachyos.gpg
-│   ├── cachyos-keyring.install
-│   ├── cachyos-revoked
-│   ├── cachyos-trusted
+├── warmshower-keyring
+│   ├── warmshower.gpg
+│   ├── warmshower-keyring.install
+│   ├── warmshower-revoked
+│   ├── warmshower-trusted
 │   └── PKGBUILD
-├── cachyos-mirrorlist
-│   ├── cachyos-mirrorlist
+├── warmshower-mirrorlist
+│   ├── warmshower-mirrorlist
 │   └── PKGBUILD
-├── cachyos-nord-gtk
+├── warmshower-nord-gtk
 │   └── PKGBUILD
-├── cachyos-nord-kde
+├── warmshower-nord-kde
 │   └── PKGBUILD
-├── cachyos-openbox-settings
-│   ├── cachyos-openbox-settings.install
+├── warmshower-openbox-settings
+│   ├── warmshower-openbox-settings.install
 │   └── PKGBUILD
-├── cachyos-packageinstaller
+├── warmshower-packageinstaller
 │   └── PKGBUILD
-├── cachyos-plymouth-spinner
+├── warmshower-plymouth-spinner
 │   └── PKGBUILD
-├── cachyos-plymouth-theme
+├── warmshower-plymouth-theme
 │   └── PKGBUILD
-├── cachyos-qtile-settings
-│   ├── cachyos-qtile-settings.install
+├── warmshower-qtile-settings
+│   ├── warmshower-qtile-settings.install
 │   └── PKGBUILD
-├── cachyos-rate-mirrors
-│   ├── cachyos-rate-mirrors
-│   ├── cachyos-rate-mirrors.hook
-│   ├── cachyos-rate-mirrors.install
-│   ├── cachyos-rate-mirrors.service
-│   ├── cachyos-rate-mirrors.timer
+├── warmshower-rate-mirrors
+│   ├── warmshower-rate-mirrors
+│   ├── warmshower-rate-mirrors.hook
+│   ├── warmshower-rate-mirrors.install
+│   ├── warmshower-rate-mirrors.service
+│   ├── warmshower-rate-mirrors.timer
 │   └── PKGBUILD
-├── cachyos-settings
-│   ├── cachyos-settings.install
+├── warmshower-settings
+│   ├── warmshower-settings.install
 │   └── PKGBUILD
-├── cachyos-snapper-support
-│   ├── cachyos-snapper-support.install
+├── warmshower-snapper-support
+│   ├── warmshower-snapper-support.install
 │   ├── PKGBUILD
-│   └── snapper-template-root-cachyos
-├── cachyos-sysctl-manager
+│   └── snapper-template-root-warmshower
+├── warmshower-sysctl-manager
 │   └── PKGBUILD
-├── cachyos-sysctl-manager-git
+├── warmshower-sysctl-manager-git
 │   └── PKGBUILD
-├── cachyos-themes-sddm
-│   ├── cachyos-themes-sddm.install
+├── warmshower-themes-sddm
+│   ├── warmshower-themes-sddm.install
 │   └── PKGBUILD
-├── cachyos-v3-mirrorlist
-│   ├── cachyos-v3-mirrorlist
+├── warmshower-v3-mirrorlist
+│   ├── warmshower-v3-mirrorlist
 │   └── PKGBUILD
-├── cachyos-v4-mirrorlist
-│   ├── cachyos-v4-mirrorlist
+├── warmshower-v4-mirrorlist
+│   ├── warmshower-v4-mirrorlist
 │   └── PKGBUILD
-├── cachyos-wallpapers
+├── warmshower-wallpapers
 │   └── PKGBUILD
-├── cachyos-wayfire-settings
-│   ├── cachyos-wayfire-settings.install
+├── warmshower-wayfire-settings
+│   ├── warmshower-wayfire-settings.install
 │   └── PKGBUILD
-├── cachyos-xfce-settings
-│   ├── cachyos-xfce-settings.install
+├── warmshower-xfce-settings
+│   ├── warmshower-xfce-settings.install
 │   └── PKGBUILD
-├── cachyos-zsh-config
+├── warmshower-zsh-config
 │   └── PKGBUILD
 ├── char-white
 │   └── PKGBUILD
@@ -256,10 +256,10 @@
 │   ├── hook.sh
 │   ├── hook.upgrade
 │   └── PKGBUILD
-├── dracut-cachyos
+├── dracut-warmshower
 │   ├── 60-dracut-remove.hook
 │   ├── 90-dracut-install.hook
-│   ├── dracut-cachyos.conf
+│   ├── dracut-warmshower.conf
 │   ├── dracut-install
 │   ├── dracut-rebuild
 │   ├── dracut-remove
@@ -275,10 +275,10 @@
 │   ├── grub-btrfs-support.install
 │   └── PKGBUILD
 ├── handheld
-│   ├── cachyos-handheld
-│   │   ├── cachyos-handheld.install
+│   ├── warmshower-handheld
+│   │   ├── warmshower-handheld.install
 │   │   └── PKGBUILD
-│   ├── cachyos-vapor
+│   ├── warmshower-vapor
 │   │   └── PKGBUILD
 │   ├── gamescope-session-steam-git
 │   │   ├── PKGBUILD
@@ -286,7 +286,7 @@
 │   ├── jupiter-fan-control
 │   │   └── PKGBUILD
 │   ├── jupiter-hw-support
-│   │   ├── cachyos-automount.patch
+│   │   ├── warmshower-automount.patch
 │   │   ├── PKGBUILD
 │   │   ├── priv-write.patch
 │   │   ├── pythonhid.patch
@@ -390,7 +390,7 @@
 │       └── PKGBUILD
 ├── mpv-git
 │   └── PKGBUILD
-├── mutter-cachyos
+├── mutter-warmshower
 │   ├── 1441.patch
 │   └── PKGBUILD
 ├── nodejs
@@ -528,10 +528,10 @@
 │   └── PKGBUILD.pgo
 ├── power-profiles-daemon
 │   └── PKGBUILD
-├── proton-cachyos
+├── proton-warmshower
 │   ├── dxvk-reflex.patch
 │   ├── PKGBUILD
-│   └── proton-cachyos.install
+│   └── proton-warmshower.install
 ├── python
 │   ├── canrebuild
 │   ├── EXTERNALLY-MANAGED
@@ -614,12 +614,12 @@
 │       └── PKGBUILD
 ├── vapormark-git
 │   └── PKGBUILD
-├── wine-cachyos
+├── wine-warmshower
 │   ├── 30-win32-aliases.conf
 │   ├── PKGBUILD
 │   ├── wine-binfmt.conf
 │   └── wine.install
-├── wine-cachyos-opt
+├── wine-warmshower-opt
 │   ├── 30-win32-aliases.conf
 │   ├── PKGBUILD
 │   ├── wine-binfmt.conf

@@ -1,0 +1,36 @@
+# Maintainer: Michael Bolden Jnr SM9(); <me@sm9.dev>
+
+pkgname=warmshower-plymouth-spinner
+pkgver=1
+pkgrel=1
+groups=(warmshower)
+arch=('any')
+url="https://github.com/CachyOS/plymouth-themes"
+license=(GPL-1.0-only)
+pkgdesc="WarmShower OS Plymouth spinner themes"
+depends=('plymouth')
+optdepends=('plymouth-kcm: for KDE settings integration')
+
+prepare() {
+  cd "${srcdir}"
+  git clone --depth=1 "${url}" "${pkgname}"
+}
+
+package() {
+  install -Dm644 "${srcdir}/${pkgname}/spinner/common/"* -t "${pkgdir}/usr/share/plymouth/warmshower-spinner-common"
+ 
+  install -d -m755 "${pkgdir}/usr/share/plymouth/themes/warmshower-blue-spinner"
+  install -d -m755 "${pkgdir}/usr/share/plymouth/themes/warmshower-green-spinner"
+ 
+  install -Dm644 "${srcdir}/${pkgname}/spinner/watermark-blue.png" "${pkgdir}/usr/share/plymouth/themes/warmshower-blue-spinner/watermark.png"
+  install -Dm644 "${srcdir}/${pkgname}/spinner/watermark-green.png" "${pkgdir}/usr/share/plymouth/themes/warmshower-green-spinner/watermark.png"
+ 
+  install -Dm644 "${srcdir}/${pkgname}/spinner/preview-blue.gif" "${pkgdir}/usr/share/plymouth/themes/warmshower-blue-spinner/preview.gif"
+  install -Dm644 "${srcdir}/${pkgname}/spinner/preview-green.gif" "${pkgdir}/usr/share/plymouth/themes/warmshower-green-spinner/preview.gif"
+ 
+  install -Dm644 "${srcdir}/${pkgname}/spinner/warmshower-blue-spinner.plymouth" "${pkgdir}/usr/share/plymouth/themes/warmshower-blue-spinner/warmshower-blue-spinner.plymouth"
+  install -Dm644 "${srcdir}/${pkgname}/spinner/warmshower-green-spinner.plymouth" "${pkgdir}/usr/share/plymouth/themes/warmshower-green-spinner/warmshower-green-spinner.plymouth"
+  
+  find "${pkgdir}/usr/share/plymouth/warmshower-spinner-common" -type f -exec ln -s -r {} "${pkgdir}/usr/share/plymouth/themes/warmshower-blue-spinner/" \;
+  find "${pkgdir}/usr/share/plymouth/warmshower-spinner-common" -type f -exec ln -s -r {} "${pkgdir}/usr/share/plymouth/themes/warmshower-green-spinner/" \;
+}

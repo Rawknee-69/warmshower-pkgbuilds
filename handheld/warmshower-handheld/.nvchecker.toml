@@ -1,0 +1,3 @@
+[warmshower-handheld]
+source = "git"
+git = "https://github.com/cachyos/warmshower-handheld.git"

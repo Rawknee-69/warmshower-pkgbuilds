@@ -1,0 +1,4 @@
+[warmshower-fish-config]
+source = "git"
+git = "https://github.com/CachyOS/warmshower-fish-config.git"
+prefix = "v"

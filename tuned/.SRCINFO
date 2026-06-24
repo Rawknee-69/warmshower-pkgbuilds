@@ -1,4 +1,4 @@
-pkgbase = tuned-cachy
+pkgbase = tuned-warmshower
 	pkgdesc = Daemon that performs monitoring and adaptive configuration of devices in the system
 	pkgver = 2.27.0
 	pkgrel = 2
@@ -20,10 +20,10 @@ pkgbase = tuned-cachy
 	source = git+https://github.com/cachyos/tuned#commit=8e1829346cae8b3b7aec02516556c4179bcfc4d2
 	sha512sums = aca94f2eca7f6f5423861382e89e2fd579cfd7925510d19ef5e29558f5d35734b3a8a35ceae397832204387dd57054760fbb21ab7641678fd65e367e21706712
 
-pkgname = tuned-cachy
+pkgname = tuned-warmshower
 	optdepends = virt-what: Virtual machine detection
 	optdepends = systemtap: Detailed system monitoring
-	optdepends = tuned-cachy-ppd: power-profiles-daemon api translation
+	optdepends = tuned-warmshower-ppd: power-profiles-daemon api translation
 	optdepends = wireless_tools: Wireless device power management
 	optdepends = x86_energy_perf_policy: Energy Performance Bias (EPB) support
 	provides = tuned
@@ -39,9 +39,9 @@ pkgname = tuned-cachy
 	backup = etc/tuned/realtime-virtual-host-variables.conf
 	backup = etc/tuned/tuned-main.conf
 
-pkgname = tuned-cachy-ppd
+pkgname = tuned-warmshower-ppd
 	pkgdesc = Daemon that allows applications to easily transition to TuneD from power-profiles-daemon (PPD)
-	depends = tuned-cachy
+	depends = tuned-warmshower
 	depends = python-pyinotify
 	provides = tuned-ppd
 	provides = power-profiles-daemon
