@@ -1,0 +1,118 @@
+name: Build and Publish Package
+
+# Reusable workflow template for building and publishing a WarmShower OS package.
+# Call this from a package-specific workflow using:
+#
+#   jobs:
+#     publish:
+#       uses: Warm-shower/warmshower-pkgbuilds/.github/workflows/build-and-publish.yml@master
+#       with:
+#         package_dir: warmshower-settings-pkg
+#       secrets: inherit
+
+on:
+  workflow_call:
+    inputs:
+      package_dir:
+        description: "Subdirectory containing the PKGBUILD"
+        required: true
+        type: string
+      arch:
+        description: "Target architecture"
+        required: false
+        default: "x86_64"
+        type: string
+    secrets:
+      WS_SIGNING_KEY:
+        required: true
+      WS_SIGNING_KEY_PASSPHRASE:
+        required: true
+      REPO_PUBLISH_TOKEN:
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: archlinux:base-devel
+    outputs:
+      package_files: ${{ steps.find_packages.outputs.files }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup build environment
+        run: |
+          pacman -Syu --noconfirm
+          useradd builder -m
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chmod -R a+rw .
+
+      - name: Build package
+        run: |
+          cd "${{ inputs.package_dir }}"
+          sudo -H -u builder makepkg --syncdeps --noconfirm
+
+      - name: Find built packages
+        id: find_packages
+        run: |
+          FILES=$(find "${{ inputs.package_dir }}" -name "*.pkg.tar.zst" | tr '\n' ' ')
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+
+      - name: Import WarmShower signing key
+        env:
+          WS_SIGNING_KEY: ${{ secrets.WS_SIGNING_KEY }}
+          WS_SIGNING_KEY_PASSPHRASE: ${{ secrets.WS_SIGNING_KEY_PASSPHRASE }}
+        run: |
+          echo "$WS_SIGNING_KEY" | gpg --batch --import
+          # Warm up the key agent
+          echo "$WS_SIGNING_KEY_PASSPHRASE" | gpg --batch --passphrase-fd 0 \
+            --pinentry-mode loopback --sign /dev/null 2>/dev/null || true
+
+      - name: Sign packages
+        env:
+          WS_SIGNING_KEY_PASSPHRASE: ${{ secrets.WS_SIGNING_KEY_PASSPHRASE }}
+        run: |
+          for pkg in ${{ steps.find_packages.outputs.files }}; do
+            gpg --batch \
+                --passphrase "$WS_SIGNING_KEY_PASSPHRASE" \
+                --pinentry-mode loopback \
+                --detach-sign --no-armor "$pkg"
+            echo "Signed: $pkg"
+          done
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.package_dir }}-packages
+          path: |
+            ${{ inputs.package_dir }}/*.pkg.tar.zst
+            ${{ inputs.package_dir }}/*.pkg.tar.zst.sig
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    # Only publish on push to master (not on PRs)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Download built packages
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.package_dir }}-packages
+          path: packages/
+
+      - name: Publish to WarmShower repository
+        env:
+          REPO_PUBLISH_TOKEN: ${{ secrets.REPO_PUBLISH_TOKEN }}
+        run: |
+          # Upload each package and its signature to the WarmShower package repository.
+          # The actual upload mechanism depends on the hosting decision (WS-036a):
+          #   - Cloudflare R2: use wrangler or rclone with R2 credentials
+          #   - GitHub Releases: use gh release upload
+          #   - Self-hosted: use rsync/scp
+          #
+          # TODO (WS-036a): Implement upload once hosting provider is chosen.
+          echo "Package files ready for upload:"
+          ls -la packages/
+          echo "PENDING: hosting provider not yet selected (WS-036a)"
