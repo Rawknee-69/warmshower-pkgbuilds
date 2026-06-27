@@ -1,27 +1,27 @@
-jobs:
-  check-versions:
-    env:
-      GITHUB_REPO: "Rawknee-69/warmshower-pkgbuilds"
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Set up dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y jq nvchecker pacman-package-manager
-
-      - name: Run version checker
-        run: .github/scripts/checker.sh --ci
-
 name: Check Package Versions
 
 on:
   schedule:
     # Run every 4 hours
     - cron: "0 */4 * * *"
-  # Also allows manual trigger
   workflow_dispatch:
+
+jobs:
+  check-versions:
+    env:
+      GITHUB_REPO: "Warm-shower/warmshower-pkgbuilds"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Use Arch Linux container — avoids fragile Ubuntu apt install of nvchecker + pacman-package-manager.
+    # Arch container already has pacman; nvchecker is available in the extra repository.
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pacman -Syu --noconfirm nvchecker jq
+
+      - name: Run version checker
+        run: .github/scripts/checker.sh --ci

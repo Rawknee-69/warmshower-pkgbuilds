@@ -1,25 +1,3 @@
-jobs:
-  validate-pkgbuilds:
-    runs-on: ubuntu-latest
-    container: archlinux:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-      # https://github.com/actions/checkout/issues/363
-      - name: Fix Git safe directory issue
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - name: Install dependencies
-        run: pacman -Syu --noconfirm namcap bun
-      - name: Validate PKGBUILDs
-        run: bun .github/scripts/validate-pkgbuilds.js
-        env:
-          GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_REF: ${{ github.ref }}
-          BASE_REF: ${{ github.event.pull_request.base.sha }}
-          HEAD_REF: ${{ github.event.pull_request.head.sha }}
-
 name: Validate PKGBUILDs
 
 on:
@@ -39,3 +17,56 @@ on:
         description: "SHA to validate"
         required: true
         default: "HEAD"
+
+jobs:
+  validate-pkgbuilds:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # https://github.com/actions/checkout/issues/363
+      - name: Fix Git safe directory issue
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Install dependencies
+        run: pacman -Syu --noconfirm namcap bun
+
+      - name: Validate PKGBUILDs (namcap + lint)
+        run: bun .github/scripts/validate-pkgbuilds.js
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REF: ${{ github.ref }}
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.sha }}
+
+      - name: Verify source checksums on changed PKGBUILDs
+        # Verifies checksums without downloading VCS sources or requiring GPG keys in CI.
+        # This catches source= URL changes where sha256sums were not regenerated.
+        # SKIP is only valid for VCS (git+, svn+, hg+) sources — all others must have real hashes.
+        run: |
+          set -euo pipefail
+          CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha || 'HEAD~1' }} HEAD -- '**/PKGBUILD' | xargs -r dirname | sort -u)
+          if [ -z "$CHANGED" ]; then
+            echo "No PKGBUILD directories changed, skipping verifysource check."
+            exit 0
+          fi
+          FAILURES=0
+          for dir in $CHANGED; do
+            echo "--- Verifying source checksums in: $dir ---"
+            (cd "$dir" && makepkg --verifysource --skippgpcheck --noprepare --noextract 2>&1) || {
+              echo "CHECKSUM FAILURE in $dir"
+              FAILURES=$((FAILURES + 1))
+            }
+          done
+          if [ "$FAILURES" -gt 0 ]; then
+            echo ""
+            echo "ERROR: $FAILURES PKGBUILD(s) failed checksum verification."
+            echo "If you updated a source= URL, regenerate sha256sums with: makepkg -g"
+            echo "SKIP is only valid for VCS (git+/svn+/hg+/bzr+) sources."
+            exit 1
+          fi
+          echo "All checksum verifications passed."
