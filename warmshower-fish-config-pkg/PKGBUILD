@@ -1,12 +1,11 @@
-# Maintainer: Vladislav Nepogodin <upstream-maintainer>
-# Maintainer: ptr1337 <admin@ptr1337.dev>
+# Maintainer: WarmShower OS <admin@warmshower.ai>
 
 pkgname=warmshower-fish-config
 pkgver=15
-pkgrel=1
+pkgrel=2
 pkgdesc="Fish configuration of WarmShower OS"
 arch=('any')
-url="https://github.com/Rawknee-69/$pkgname"
+url="https://github.com/Warm-shower/$pkgname"
 license=('MIT')
 depends=(
   bat
@@ -29,6 +28,13 @@ conflicts=('warmshower-fish-config' 'kwin-scripts-window-colors')
 replaces=('warmshower-fish-config')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
         "$pkgname.install")
+# TODO (WS-021): Replace SKIP with real sha256sums.
+# SKIP is only valid for VCS (git+/svn+/hg+/bzr+) sources.
+# A static GitHub release tarball MUST have a real checksum.
+# To generate: download the tarball and run:
+#   sha256sum warmshower-fish-config-15.tar.gz
+#   sha256sum warmshower-fish-config.install
+# Then replace the two SKIP values below.
 sha256sums=('SKIP'
             'SKIP')
 

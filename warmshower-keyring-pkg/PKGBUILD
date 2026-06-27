@@ -1,23 +1,24 @@
-# Maintainer: Peter Jung ptr1337 <admin@ptr1337.dev>
-# Maintainer: Vladislav Nepogodin <upstream-maintainer>
+# Maintainer: WarmShower OS <admin@warmshower.ai>
 
 pkgname=warmshower-keyring
 pkgver=20240331
-pkgrel=1
+pkgrel=2
 pkgdesc="WarmShower OS keyring"
 arch=(any)
-url="https://github.com/Rawknee-69/warmshower-pkgbuilds"
+url="https://github.com/Warm-shower/warmshower-pkgbuilds"
 license=('GPL-3.0-or-later')
 groups=(warmshower)
 install=$pkgname.install
-# NOTE: warmshower.gpg currently contains the upstream GPG key.
-# Replace with your own GPG key before publishing your [warmshower] repo (Step 7/10).
+# warmshower.gpg must contain the WarmShower OS signing key generated in WS-001.
+# DO NOT commit the private key.  Only the exported public key (.gpg) goes here.
+# Regenerate sha512sums after updating key material: makepkg -g
 source=("warmshower.gpg"
         "warmshower-revoked"
         "warmshower-trusted"
         "$install")
 
-# TODO: recalculate sha512sums after any key material changes
+# TODO (WS-002): Recalculate all sha512sums after replacing placeholder key material
+# with the real WarmShower OS GPG public key generated in WS-001.
 sha512sums=('1933bb08294113c95ce05e608b5f1c8643e8f9afffc97e8bf479626440e31d451f54a5e92bbac6a20a991fa874eec47b36b2722b6529d87afb384bd2c32a5f30'
             'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e'
             '4c2677da43b2032453346605cdf869f8c584c6f7d22009cd47f1585fc01c81e91917db237c383dc64ef90baa901a40e887a8a8e693fb97d1851040a16d6b8b62'

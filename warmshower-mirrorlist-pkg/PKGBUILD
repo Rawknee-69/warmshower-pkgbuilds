@@ -1,12 +1,11 @@
-# Maintainer: Peter Jung ptr1337 <admin@ptr1337.dev>
-# Maintainer: Vladislav Nepogodin (upstream)
+# Maintainer: WarmShower OS <admin@warmshower.ai>
 
 pkgbase=warmshower-mirrorlist
 pkgname=('warmshower-mirrorlist' 'warmshower-v3-mirrorlist' 'warmshower-v4-mirrorlist')
 pkgver=27
-pkgrel=1
+pkgrel=2
 pkgdesc="WarmShower OS repository mirrorlist"
-url='https://github.com/Rawknee-69/warmshower-pkgbuilds'
+url='https://github.com/Warm-shower/warmshower-pkgbuilds'
 arch=('any')
 license=(GPL-3.0-or-later)
 groups=(warmshower)
